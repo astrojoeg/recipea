@@ -54,6 +54,7 @@ def find_recipe(your_ingredients, recipe_bank):
                print('Shopping list',recipe_bank.ingredients.values[best_match[j]])
 
 
+<<<<<<< HEAD
 # Initialize the reciPY Suite
 if __name__ == '__main__':
 
@@ -92,6 +93,10 @@ if __name__ == '__main__':
 		print('')
 
 	find_recipe(ingredients,recipe_bank)
+=======
+# Test the function
+find_recipe(ingredients,recipe_bank)
+>>>>>>> ee675b07f5ee4b6ad988c0be6ad3950f43d98f08
 
 
 
