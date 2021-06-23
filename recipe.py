@@ -3,8 +3,13 @@
 #Ingredient objects will have calorie attribute that the recipe class will use
 #to calculate total calorie count for the recipe
 
+import csv
+from reciPY import recipe_bank
+
 class recipe(object):
-    def __init__(self, ingreds, cook_time, tot_cal):
+    def __init__(self, name, ingreds, cook_time, tot_cal, origin):
+        self.origin = origin
+        self.name = name
         self.tot_cal = 0
         self.ingreds = ingreds
         for i in range(len(ingreds)):
@@ -14,6 +19,8 @@ class recipe(object):
 
 
     def add_rec(self, rec):
-        
+        recipe_bank.append(self.name, self.ingreds, self.cook_time, self.origin)
+
+
 
 
