@@ -30,7 +30,7 @@ if (check_ingredients == 'Y') or (check_ingredients == 'y'):
 else:
 	ingredients = ingredients_input.split(', ')
 
-print(ingredients)
+
 ##### Call the sorting/cross match function here to figure out what recipe you can cook #####
 def find_recipe(your_ingredients, recipe_bank):
 	# Look for the recipe that has the most matches with your ingredients from the pantry
