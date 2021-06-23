@@ -2,37 +2,27 @@
 
 
 # from defintions import ____
-import pandas as pd
+import argparse
+from pandas import read_csv
 import numpy as np
 
-# Import the pre-constructed recipe bank
-recipe_bank = pd.read_csv('recipe_bank.csv')
-
-# Print a usage message to the command line
-print('\n##########################################################')
-print('#                                                        #')
-print('#                 Hi! Welcome to reciPY!                 #')
-print('#                                                        #')
-print('#  This suite will help you figure out what recipe you   #')
-print('#  can cook right now.                                   #')
-print('#                                                        #')
-print('#  To begin please input what ingredients you currently  #')
-print('#  have in stock, separated by commas.                   #\n')
-
-ingredients_input = input('List current ingredients: ')
-
-# Double check to see if they would like to add anything else
-print('You entered ' + ingredients_input + '.')
-check_ingredients = input('Would you like to add anything else? (Y/[N]): ')
-if (check_ingredients == 'Y') or (check_ingredients == 'y'):
-	new_ingredients = input('Add new ingredients: ')
-	ingredients = (ingredients_input + ', ' + new_ingredients).split(', ')
-else:
-	ingredients = ingredients_input.split(', ')
-
-
-##### Call the sorting/cross match function here to figure out what recipe you can cook #####
+##### Define a crossmatch function to figure out what recipe you can cook #####
 def find_recipe(your_ingredients, recipe_bank):
+	"""Find Recipe
+
+    Find what recipes you can cook based on your available
+		ingredients and your recipe bank.
+
+    Args:
+        your_ingredients (array): Numpy 1-D array. List of ingredients that you have instock that
+			that you inputted.
+        recipe_bank (DataFrame): Pandas DataFrame. A csv file including all your recipes and
+			their corresponding ingredient requirements and other metadata.
+
+    Returns:
+        None: a print statement is the output.
+    """
+
 	# Look for the recipe that has the most matches with your ingredients from the pantry
     ingredients_bank = recipe_bank.ingredients.values
     ingredients_matches = np.array([len(np.where(np.isin(your_ingredients, i.split(', ')))[0]) for i in ingredients_bank])
@@ -64,8 +54,49 @@ def find_recipe(your_ingredients, recipe_bank):
                print('Shopping list',recipe_bank.ingredients.values[best_match[j]])
 
 
+<<<<<<< HEAD
+# Initialize the reciPY Suite
+if __name__ == '__main__':
+
+	# Print a usage message to the command line
+	print('\n##########################################################')
+	print('#                                                        #')
+	print('#                 Hi! Welcome to reciPY!                 #')
+	print('#                                                        #')
+	print('#  This suite will help you figure out what recipe you   #')
+	print('#  can cook right now.                                   #')
+	print('#                                                        #')
+	print('##########################################################\n')
+	
+	# Generate arguments for command line parsing
+	parser = argparse.ArgumentParser(description='Provide path name to data directory.')
+	parser.add_argument('-f', '--filepath',type=str,default='recipe_bank.csv',
+						help="Path to location of your recipe bank.")
+	args = parser.parse_args()
+	# Import the pre-constructed recipe bank
+	recipe_bank = read_csv(args.filepath)
+
+	# Input what ingredients you have in the pantry
+	print('#  To begin please input what ingredients you currently  #')
+	print('#  have in stock, separated by commas.                   #\n')
+	ingredients_input = input('List current ingredients: ')
+
+	# Double check to see if they would like to add anything else
+	print('You entered ' + ingredients_input + '.')
+	check_ingredients = input('Would you like to add anything else? (Y/[N]): ')
+	if (check_ingredients == 'Y') or (check_ingredients == 'y'):
+		new_ingredients = input('Add new ingredients: ')
+		ingredients = (ingredients_input + ', ' + new_ingredients).split(', ')
+		print('')
+	else:
+		ingredients = ingredients_input.split(', ')
+		print('')
+
+	find_recipe(ingredients,recipe_bank)
+=======
 # Test the function
 find_recipe(ingredients,recipe_bank)
+>>>>>>> ee675b07f5ee4b6ad988c0be6ad3950f43d98f08
 
 
 
