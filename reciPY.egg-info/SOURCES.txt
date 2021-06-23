@@ -1,0 +1,6 @@
+README.md
+setup.py
+reciPY.egg-info/PKG-INFO
+reciPY.egg-info/SOURCES.txt
+reciPY.egg-info/dependency_links.txt
+reciPY.egg-info/top_level.txt
