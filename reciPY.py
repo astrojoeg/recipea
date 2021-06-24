@@ -33,6 +33,7 @@ def find_recipe(your_ingredients, ingredients_bank, recipe_names, recipe_bank):
 			that you inputted.
         ingredients_bank (array): Numpy 1-D array. List including the required ingredients of each recipe.
 		recipe_names (array): Numpy 1-D array. List including the names of each recipe.
+		recipe_bank (DataFrame): Pandas DataFrame. The csv file containing all the known recipes' information.
 
     Returns:
         None: a print statement is the output.
@@ -58,16 +59,16 @@ def find_recipe(your_ingredients, ingredients_bank, recipe_names, recipe_bank):
 		print("It doesn't look like you have any ingredients that match out recipes.")
 		build_recipe = input('Would you like to write a new recipe? (Y/[N]): ')
 		if (build_recipe == 'Y') or (build_recipe == 'y'):
-			# CALLL WRITING FUNCTION
-			# print('You need to write that write a recipe function')
 			new_name = input("Please enter your recipe's name: ")
 			new_ingredients = input("Please enter your recipe's ingredients (comma-separated): ")
 			new_time = int(input("Please enter your recipe's required cooking time (minutes): "))
 			new_origin = input("Please enter your recipe's place of origin: ")
 			new_recipe = recipe(new_name,new_ingredients,new_time,new_origin).add_rec()
-			print('test')
 			new_bank = recipe_bank.append(new_recipe, ignore_index=True)
-			new_bank.to_csv('recipe_bank.csv')
+			
+			save_recipe = input('Would you like to save this recipe to the recipe bank? (Y/[N]): ')
+			if (save_recipe == 'Y') or (save_recipe == 'y'):
+				new_bank.to_csv('recipe_bank.csv')
 		
 	if len(best_match) >=1:
 		print('')
