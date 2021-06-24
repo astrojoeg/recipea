@@ -1,11 +1,29 @@
 # This is our main branch python file that users will run to use our package
 
 import argparse
-from pandas import read_csv
+import pandas as pd
 import numpy as np
 
+
+class recipe(object):
+    def __init__(self, name, ingreds, cook_time, origin):
+        self.origin = origin
+        self.name = name
+        # self.tot_cal = 0
+        self.ingreds = ingreds
+        # for i in range(len(ingreds)):
+		# self.tot_cal = sum([ingreds[i].calorie for i in range(len(ingred))])
+        self.cook_time = cook_time
+        # self.add_rec()
+		
+    def add_rec(self):
+        recipe_df = pd.DataFrame([[self.name, self.ingreds, self.cook_time, self.origin]],columns=['recipe_name','ingredients','cook_time','origin'])
+        return recipe_df
+
+
+
 ##### Define a crossmatch function to figure out what recipe you can cook #####
-def find_recipe(your_ingredients, ingredients_bank, recipe_names):
+def find_recipe(your_ingredients, ingredients_bank, recipe_names, recipe_bank):
 	"""Find Recipe
 
     Find what recipes you can cook based on your available ingredients and your recipe bank.
@@ -37,11 +55,19 @@ def find_recipe(your_ingredients, ingredients_bank, recipe_names):
 		    print('{} - {}. You have {}/{} ingredients already.'.format(j+1, recipe_names[best_match[j]], ingredients_matches[best_match[j]], len(ingredients_bank[best_match[j]].split(','))))
 
 	elif len(best_match) == 0:
-	    print("It doesn't look like you have any ingredients that match out recipes.")
-	    build_recipe = input('Would you like to write a new recipe? (Y/[N]): ')
-	    if (build_recipe == 'Y') or (build_recipe == 'y'):
+		print("It doesn't look like you have any ingredients that match out recipes.")
+		build_recipe = input('Would you like to write a new recipe? (Y/[N]): ')
+		if (build_recipe == 'Y') or (build_recipe == 'y'):
 			# CALLL WRITING FUNCTION
-		    print('You need to write that write a recipe function')
+			# print('You need to write that write a recipe function')
+			new_name = input("Please enter your recipe's name: ")
+			new_ingredients = input("Please enter your recipe's ingredients (comma-separated): ")
+			new_time = int(input("Please enter your recipe's required cooking time (minutes): "))
+			new_origin = input("Please enter your recipe's place of origin: ")
+			new_recipe = recipe(new_name,new_ingredients,new_time,new_origin).add_rec()
+			print('test')
+			new_bank = recipe_bank.append(new_recipe, ignore_index=True)
+			new_bank.to_csv('recipe_bank.csv')
 		
 	if len(best_match) >=1:
 		print('')
@@ -70,7 +96,7 @@ if __name__ == '__main__':
 						help="Path to location of your recipe bank.")
 	args = parser.parse_args()
 	# Import the pre-constructed recipe bank
-	recipe_bank = read_csv(args.filepath)
+	recipe_bank = pd.read_csv(args.filepath)
 
 	# Input what ingredients you have in the pantry
 	print('#  To begin please input what ingredients you currently  #')
@@ -93,7 +119,7 @@ if __name__ == '__main__':
 		ingredients = ingredients_input.split(', ')
 		print('')
 
-	find_recipe(ingredients,recipe_bank.ingredients.values,recipe_bank.recipe_name.values)
+	find_recipe(ingredients,recipe_bank.ingredients.values,recipe_bank.recipe_name.values,recipe_bank)
 
 
 
