@@ -21,6 +21,40 @@ class recipe(object):
         return recipe_df
 
 
+class ingredients(object):
+    def __init__(self, name, vegan, veg, gf, nf):
+        self.name = name
+        #self.cal = cal
+        self.vegan = vegan
+        self.veg = veg
+        self.gf = gf
+        self.nf = nf
+        
+    def is_vegan(self):
+        if self.vegan == 'yes':
+            return True
+        else:
+            return False
+
+    def is_veg(self):
+        if self.veg == 'yes':
+            return True
+        else:
+            return False
+
+    def is_gf(self):
+        if self.gf == 'yes':
+            return True
+        else:
+            return False
+			
+    def is_nf(self):
+        if self.nf == 'yes':
+            return True
+        else:
+            return False
+
+
 
 ##### Define a crossmatch function to figure out what recipe you can cook #####
 def find_recipe(your_ingredients, ingredients_bank, recipe_names, recipe_bank):
@@ -95,9 +129,12 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='Provide path name to data directory.')
 	parser.add_argument('-f', '--filepath',type=str,default='recipe_bank.csv',
 						help="Path to location of your recipe bank.")
+	parser.add_argument('-i', '--ingredients',type=str,default='ingredients_bank.csv',
+						help="Path to location of your ingredient bank.")
 	args = parser.parse_args()
 	# Import the pre-constructed recipe bank
 	recipe_bank = pd.read_csv(args.filepath)
+	ingredient_bank = pd.read_csv(args.ingredients)
 
 	# Input what ingredients you have in the pantry
 	print('#  To begin please input what ingredients you currently  #')

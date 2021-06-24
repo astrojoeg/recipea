@@ -1,0 +1,41 @@
+ingredient_name,vegan,vegetarian,gluten_free,nut_free
+cheese,no,no,yes,yes
+egg,no,yes,yes,yes
+mushrooms,yes,yes,yes,yes
+spinach,yes,yes,yes,yes
+tomato,yes,yes,yes,yes
+butter ,no,yes,yes,yes
+bread,yes,yes,no,yes
+roux,yes,yes,no,yes
+stock,no,no,yes,yes
+chicken,no,no, yes,yes
+sausage,no,no, yes,yes
+shrimp,no,no,yes,yes
+onion,yes,yes,yes,yes
+green bell pepper,yes,yes,yes,yes
+oats,yes,yes,yes,yes
+celery,yes,yes,yes,yes
+flour,yes,yes,no,yes
+sugar,yes,yes,yes,yes
+chocolate chips,yes,yes,yes,yes
+kimchi,yes,yes,yes,yes
+ginger,yes,yes,yes,yes
+spam,no,no,yes,yes
+tofu,yes,yes,yes,yes
+chilli paste,yes,yes,yes,yes
+shin ramen,yes,yes,no,yes
+potato,yes,yes,yes,yes
+ginger,yes,yes,yes,yes
+starch,yes,yes,yes,yes
+pepper,yes,yes,yes,yes
+paprika,yes,yes,yes,yes
+milk,no,yes,yes,yes
+honey,yes,yes,yes,yes
+berries,yes,yes,yes,yes
+salt,yes,yes,yes,yes
+avocados,yes,yes,yes,yes
+cilantro,yes,yes,yes,yes
+lime,yes,yes,yes,yes
+spices,yes,yes,yes,yes
+garlic,yes,yes,yes,yes
+salsa,yes,yes,yes,yes
