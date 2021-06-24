@@ -1,0 +1,6 @@
+README.md
+setup.py
+recipea.egg-info/PKG-INFO
+recipea.egg-info/SOURCES.txt
+recipea.egg-info/dependency_links.txt
+recipea.egg-info/top_level.txt

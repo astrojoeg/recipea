@@ -1,8 +1,9 @@
-,recipe_name,ingredients,cook_time,origin
-0,omelette,"eggs, cheese, mushrooms, spinach, tomato",15,france
-1,grilled cheese,"bread, cheese, tomato, butter",10,america
-2,gumbo,"roux, stock, chicken, sausage, shrimp, onion, green bell pepper, garlic, celery",360,america
-3,chocolate chip cookies,"flour, sugar, butter, chocolate chips, egg",30,america
-4,budae jjigae ramen,"kimchi, ginger, onion, spam, sausage, tofu, chilli paste, shin ramen",30,south korean
-5,potato pancake,"potato, ginger, onion, flour, starch, eggs, pepper, paprika, cheese ",30,europe
-6,oatmeal,"oats, milk, honey, berries, salt",5,global
+recipe_name,ingredients,cook_time,origin
+omelette,"eggs, cheese, mushrooms, spinach, tomato",15,france
+grilled cheese,"bread, cheese, tomato, butter",10,america
+gumbo,"roux, stock, chicken, sausage, shrimp, onion, green bell pepper, garlic, celery",360,america
+chocolate chip cookies,"flour, sugar, butter, chocolate chips, egg",30,america
+budae jjigae ramen,"kimchi, ginger, onion, spam, sausage, tofu, chilli paste, shin ramen",30,south korean
+potato pancake,"potato, ginger, onion, flour, starch, eggs, pepper, paprika, cheese ",30,europe
+oatmeal,"oats, milk, honey, berries, salt",5,global
+guacamole,"avocados, ciltantro, lime, spices, onion, garlic, salsa",30,mexico
