@@ -109,12 +109,12 @@ def find_recipe(your_ingredients, ingredients_bank, recipe_names, recipe_bank):
 		build_shopping_list = input('Would you like to write a shopping list? (Y/[N]): ')
 		if (build_shopping_list == 'Y') or (build_shopping_list == 'y'):
 			for j in range(len(best_match)):
-				print('Shopping list',recipe_bank.ingredients.values[best_match[j]])
+				print('Shopping list\n',recipe_bank.ingredients.values[best_match[j]])
 
 
 # Initialize the reciPY Suite
-# if __name__ == '__main__':
-def recipea():
+if __name__ == '__main__':
+# def recipea():
 	# Print a usage message to the command line
 	print('\n##########################################################')
 	print('#                                                        #')
