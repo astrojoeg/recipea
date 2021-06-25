@@ -1,4 +1,4 @@
-# This is our main branch python file that users will run to use our package
+#!/Users/astrojoe/Python/anaconda3/bin/python
 
 import argparse
 import pandas as pd
@@ -141,11 +141,6 @@ if __name__ == '__main__':
 	print('#  have in stock, separated by commas.                   #\n')
 	ingredients_input = input('List current ingredients: ')
 
-	#            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	#   ADD HERE FUNCTIONALITY TO START OFF BY WRITING A RECIPE?
-	#            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 	# Double check to see if they would like to add anything else
 	print('You entered ' + ingredients_input + '.')
 	check_ingredients = input('Would you like to add anything else? (Y/[N]): ')
@@ -158,26 +153,6 @@ if __name__ == '__main__':
 		print('')
 
 	find_recipe(ingredients,recipe_bank.ingredients.values,recipe_bank.recipe_name.values,recipe_bank)
-
-
-
-
-#### We can go a few routes here:
-#### 1) They have all the ingredients for a recipe
-####    - Give them option to see metadata about the recipe
-####    - Give option to have it printed/written out to a text file
-
-#### 2) They don't have all the recipes
-####    - Give them the recipe that closest matches their ingredients?
-####    - Write a shopping list for that recipe?
-####    - Give optionodify the recipe 
-
-
-
-
-
-
-
 
 
 
