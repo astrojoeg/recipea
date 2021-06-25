@@ -1,0 +1,7 @@
+*~
+#*#
+build/*
+dist/*
+recipea.egg-info/*
+__pycache__/
+.DS_Store
